@@ -1,0 +1,19 @@
+{
+  "name": "marp-tha-presentation-scheme",
+  "version": "1.0.0",
+  "description": "Attempt to clone the Corporate Design into marp theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "marp --theme themes/tha-theme.css --input-dir slides --output output --html",
+    "build:pdf": "marp --theme themes/tha-theme.css --input-dir slides --output output --pdf --allow-local-files",
+    "build:pptx": "marp --theme themes/tha-theme.css --input-dir slides --output output --pptx",
+    "watch": "marp --theme themes/tha-theme.css --input-dir slides --output output --html --watch",
+    "serve": "marp --theme themes/tha-theme.css --input-dir slides --server"
+  },
+  "keywords": ["marp", "presentation", "slides", "markdown", "theme"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  }
+}
