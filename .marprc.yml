@@ -1,0 +1,8 @@
+# Marp configuration file
+# This file configures default settings for Marp CLI
+
+# Enable HTML in slides
+html: true
+
+# Allow local file access (needed for PDF export with local images)
+allowLocalFiles: true
