@@ -49,14 +49,6 @@ section footer img.footer-logo {
   vertical-align: middle;
 }
 
-section::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 auto;
-  width: 220px;
-  height: 12px;
-}
-
 section p,
 section li {
   line-height: 1.4;
@@ -200,6 +192,10 @@ section footer .footer-right {
   margin-left: auto;
   text-align: right;
   white-space: nowrap;
+}
+
+section footer .footer-right::after {
+  content: attr(data-page);
 }
 
 /* Pagination (CSS fallback): If footer-right is empty, show date | page via CSS */
