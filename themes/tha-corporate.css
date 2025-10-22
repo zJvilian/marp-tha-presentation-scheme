@@ -34,6 +34,16 @@ section {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto;
+  padding: 72px 112px 96px 72px;
+}
+
+section::after {
+  font-size: 18px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--tha-muted) 85%, #000000 15%);
+  right: 36px;
+  bottom: 28px;
+  letter-spacing: 0.05em;
 }
 
 /* From slide 2 onward: remove decorative gradients (keep clean background) */
