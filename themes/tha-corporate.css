@@ -27,6 +27,7 @@ section {
   font-family: var(--font-sans);
   font-size: 32px;
   color: var(--tha-text);
+  padding: 72px 120px 72px 72px; /* add extra breathing room on the right */
   /* Background: gentle brand gradients on slide 1; clean on others */
   background-color: var(--tha-surface);
   background-image:
@@ -48,15 +49,6 @@ section footer img.footer-logo {
   width: auto;
   margin-right: 8px;
   vertical-align: middle;
-}
-
-section::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 auto;
-  width: 220px;
-  height: 12px;
-  background: linear-gradient(135deg, var(--tha-primary), var(--tha-secondary));
 }
 
 section p,
@@ -202,6 +194,14 @@ section footer .footer-right {
   margin-left: auto;
   text-align: right;
   white-space: nowrap;
+}
+
+section footer .footer-right::after {
+  content: attr(data-page);
+  font-size: 0.85em; /* keep page number subtle compared to metadata */
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-left: 0.35em;
 }
 
 /* Pagination (CSS fallback): If footer-right is empty, show date | page via CSS */
