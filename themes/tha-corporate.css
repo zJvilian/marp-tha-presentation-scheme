@@ -34,6 +34,11 @@ section {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto;
+  padding: 72px 112px 96px 72px;
+}
+
+section::after {
+  content: none; /* pagination handled inside footer */
 }
 
 /* From slide 2 onward: remove decorative gradients (keep clean background) */
@@ -192,14 +197,25 @@ section footer .footer-right {
   margin-left: auto;
   text-align: right;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-variant-numeric: tabular-nums;
 }
 
 section footer .footer-right::after {
-  content: attr(data-page);
+  content: "| " attr(data-page);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--tha-muted) 75%, #000000 25%);
 }
 
-/* Pagination (CSS fallback): If footer-right is empty, show date | page via CSS */
-/* (Removed) CSS-based page counter fallback to avoid conflicts with Marp $page */
+section footer .footer-right[data-total]::after {
+  content: "| " attr(data-page) " / " attr(data-total);
+}
+
+/* Inline pagination sits alongside the footer's right-aligned date */
 
 /* Group left/right content to the right of the logo */
 section footer .footer-content {
