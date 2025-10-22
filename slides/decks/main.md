@@ -9,7 +9,7 @@ footer: |
   <img class="footer-logo" src="../../assets/tha_logo_nT.png" alt="THA" />
   <span class="footer-content">
     <span class="footer-left">Präsentationsthema – Prof. Dr. Max Mustermann – © Copyright bei Bedarf</span>
-    <span class="footer-right">09.10.2025 | $page</span>
+    <span class="footer-right">09.10.2025 | <span class="page-number"></span></span>
   </span>
 ---
 

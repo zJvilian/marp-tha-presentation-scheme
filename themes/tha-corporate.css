@@ -50,13 +50,17 @@ section footer img.footer-logo {
   vertical-align: middle;
 }
 
-section::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 auto;
-  width: 220px;
-  height: 12px;
-  background: linear-gradient(135deg, var(--tha-primary), var(--tha-secondary));
+/* Pagination via CSS counter */
+body {
+  counter-reset: tha-page;
+}
+
+section {
+  counter-increment: tha-page;
+}
+
+section .footer-right .page-number::before {
+  content: counter(tha-page);
 }
 
 section p,
