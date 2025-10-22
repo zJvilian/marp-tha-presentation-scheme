@@ -34,6 +34,7 @@ section {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto;
+  padding: 80px 132px 88px 96px; /* increase right-hand breathing room for content */
 }
 
 /* From slide 2 onward: remove decorative gradients (keep clean background) */
@@ -196,6 +197,15 @@ section footer .footer-right {
 
 section footer .footer-right::after {
   content: attr(data-page);
+}
+
+/* Page number styling */
+section::after {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tha-muted);
+  right: 40px;
+  bottom: 26px;
 }
 
 /* Pagination (CSS fallback): If footer-right is empty, show date | page via CSS */
