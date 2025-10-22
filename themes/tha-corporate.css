@@ -30,11 +30,10 @@ section {
   /* Background: gentle brand gradients on slide 1; clean on others */
   background-color: var(--tha-surface);
   background-image:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--tha-primary) 20%, transparent), transparent 55%),
-    radial-gradient(circle at bottom right, color-mix(in srgb, var(--tha-secondary) 18%, transparent), transparent 50%);
-  background-repeat: no-repeat, no-repeat;
-  background-position: top left, bottom right;
-  background-size: auto, auto;
+    radial-gradient(circle at top left, color-mix(in srgb, var(--tha-primary) 20%, transparent), transparent 55%);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: auto;
 }
 
 /* From slide 2 onward: remove decorative gradients (keep clean background) */
@@ -56,7 +55,6 @@ section::after {
   inset: auto 0 0 auto;
   width: 220px;
   height: 12px;
-  background: linear-gradient(135deg, var(--tha-primary), var(--tha-secondary));
 }
 
 section p,
