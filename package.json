@@ -1,0 +1,19 @@
+{
+  "name": "marp-tha-presentation-scheme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Presentation starter kit with Marp and a Thai corporate-inspired custom theme.",
+  "scripts": {
+  "build": "npm run build:html && npm run build:pdf && npm run build:pptx",
+    "build:html": "marp --config marp.config.js --input-dir slides/decks --output dist",
+    "build:pdf": "marp --config marp.config.js --input-dir slides/decks --output dist --pdf",
+    "build:pptx": "marp --config marp.config.js --input-dir slides/decks --output dist --pptx",
+    "watch": "marp --config marp.config.js --input-dir slides/decks --output dist --watch",
+    "export:pdf": "marp --config marp.config.js --input-dir slides/decks --output dist --pdf",
+    "export:pptx": "marp --config marp.config.js --input-dir slides/decks --output dist --pptx",
+  "export:all": "npm run build:html && npm run build:pdf && npm run build:pptx"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  }
+}

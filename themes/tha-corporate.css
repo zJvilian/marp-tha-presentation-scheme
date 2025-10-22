@@ -1,0 +1,237 @@
+/* @theme tha-corporate */
+/* Minimal, brand-aligned Marp theme */
+
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap");
+
+:root {
+  --tha-text: #000000;         /* dk1 */
+  --tha-surface: #ffffff;      /* lt1 */
+
+  --tha-primary: #ff0250;      /* accent1 – primary brand */
+  --tha-secondary: #ffc700;    /* accent2 – secondary brand */
+  --tha-accent: #00c341;       /* accent5 – supportive accent */
+
+  --tha-muted: #595959;        /* folHlink – muted text */
+  --tha-border: #cccccc;       /* accent6 – subtle borders */
+
+  --tha-link: #ff0350;         /* hlink */
+  --tha-link-visited: #595959; /* folHlink */
+
+  --font-sans: "Sarabun", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  /* Logo sizing and offsets */
+  --tha-logo-height: 36px;           /* tweak logo height here */
+}
+
+section {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  color: var(--tha-text);
+  /* Background: gentle brand gradients on slide 1; clean on others */
+  background-color: var(--tha-surface);
+  background-image:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--tha-primary) 20%, transparent), transparent 55%),
+    radial-gradient(circle at bottom right, color-mix(in srgb, var(--tha-secondary) 18%, transparent), transparent 50%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: auto, auto;
+}
+
+/* From slide 2 onward: remove decorative gradients (keep clean background) */
+section:nth-of-type(n+2) {
+  background-image: none !important;
+}
+
+/* Footer logo (explicit <img>) */
+section footer img.footer-logo {
+  height: var(--tha-logo-height);
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 auto;
+  width: 220px;
+  height: 12px;
+  background: linear-gradient(135deg, var(--tha-primary), var(--tha-secondary));
+}
+
+section p,
+section li {
+  line-height: 1.4;
+}
+
+/* Custom bullet for unordered lists using assets/list_dot.svg */
+section ul {
+  list-style: none; /* remove default bullets */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+section ul li {
+  position: relative;
+  padding-left: 28px; /* space for custom bullet */
+  margin: 0.3em 0;
+}
+
+section ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em; /* vertically center with text line */
+  width: 16px;
+  height: 16px;
+  background: no-repeat center center / contain;
+  /* Inline data URL for reliable embedding in PDF/PPTX */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 9.6 9.6" xmlns="http://www.w3.org/2000/svg"><g><rect x="-1.1" y="5.2" width="10" height="1" fill="%23FF0350" transform="matrix(0.708 -0.7062 0.7062 0.708 -2.8514 4.4349)"/><path d="M9.5 7.4 8.5 7.4 8.5 1 2.1 1 2.1 0 7.5 0C8.6 0 9.5 0.9 9.5 2L9.5 7.4Z" fill="%23FF0350"/></g></svg>');
+}
+
+/* Nested lists: slightly smaller bullet and indent */
+section ul ul {
+  margin-top: 0.2em;
+}
+
+section ul ul li {
+  padding-left: 24px;
+}
+
+section ul ul li::before {
+  width: 12px;
+  height: 12px;
+  top: 0.5em;
+}
+
+section h1,
+section h2,
+section h3 {
+  color: var(--tha-primary);
+  font-weight: 700;
+}
+
+section h1 {
+  font-size: 64px;
+  margin-bottom: 0.2em;
+}
+
+section h2 {
+  font-size: 48px;
+  margin-bottom: 0.4em;
+}
+
+section h3 {
+  font-size: 36px;
+  margin-bottom: 0.6em;
+}
+
+section strong,
+section b {
+  color: var(--tha-primary);
+}
+
+/* Links */
+section a {
+  color: var(--tha-link);
+  text-decoration-color: color-mix(in srgb, var(--tha-link) 55%, transparent);
+}
+section a:visited {
+  color: var(--tha-link-visited);
+}
+section a:hover {
+  text-decoration-thickness: 3px;
+}
+
+section code,
+section pre,
+section .code {
+  font-family: "Fira Code", "Courier New", monospace;
+  background: color-mix(in srgb, var(--tha-primary) 8%, #ffffff);
+  padding: 0.15em 0.3em;
+  border-radius: 6px;
+  color: var(--tha-primary);
+}
+
+section blockquote {
+  border-left: 6px solid var(--tha-accent);
+  padding-left: 1.2em;
+  font-style: italic;
+  color: var(--tha-muted);
+}
+
+section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 28px;
+}
+
+section th,
+section td {
+  border-bottom: 2px solid var(--tha-border);
+  padding: 0.6em 0.8em;
+  text-align: left;
+}
+
+section th {
+  background: color-mix(in srgb, var(--tha-secondary) 20%, #ffffff);
+  color: var(--tha-text);
+  font-weight: 600;
+}
+
+section footer {
+  position: absolute;
+  left: 20px; /* ~15–20px from left edge */
+  right: 24px;
+  bottom: 12px;
+  display: flex;
+  justify-content: flex-start; /* content flows to the right of the logo */
+  align-items: flex-end; /* align logo bottom with footer baseline */
+  gap: 16px;
+  text-align: left;
+  font-size: 14px; /* very small footer text */
+  line-height: 1.2;
+  color: var(--tha-muted);
+}
+
+section footer .footer-left {
+  text-align: left;
+}
+
+section footer .footer-right {
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Pagination (CSS fallback): If footer-right is empty, show date | page via CSS */
+/* (Removed) CSS-based page counter fallback to avoid conflicts with Marp $page */
+
+/* Group left/right content to the right of the logo */
+section footer .footer-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 1; /* take remaining space to push right block to the edge */
+}
+
+/* Title slide */
+section.title-slide {
+  background: linear-gradient(135deg, var(--tha-primary), var(--tha-secondary));
+  color: #ffffff;
+}
+
+section.title-slide h1,
+section.title-slide h2,
+section.title-slide h3 {
+  color: #ffffff;
+}
+
+section.title-slide::after {
+  display: none;
+}
+
+section.title-slide footer {
+  color: rgba(255, 255, 255, 0.85);
+}

@@ -1,0 +1,12 @@
+{
+  // Make the custom Marp theme available in VS Code's Marp extension
+  "markdown.marp.themes": [
+    "themes/tha-corporate.css"
+  ],
+  // Optional: enable HTML rendering in Marp preview ("off" | "default" | "all")
+  "markdown.marp.html": "all",
+  // Allow referencing local files (images/fonts) in preview
+  "markdown.marp.allowLocalFiles": true,
+  // Optional: set tha-corporate as the default for new previews (can be overridden per deck)
+  "markdown.marp.defaultTheme": "tha-corporate"
+}
